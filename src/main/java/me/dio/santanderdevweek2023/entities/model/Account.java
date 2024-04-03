@@ -1,19 +1,22 @@
-package me.dio.entities.model;
+package me.dio.santanderdevweek2023.entities.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity(name = "tb_account")
 @Getter
 @Setter
-public class Account {
-
+public class Account implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     @Column(unique = true)
     private String number;
@@ -21,5 +24,5 @@ public class Account {
     @Column(precision = 13, scale = 2)
     private BigDecimal balance;
     @Column(precision = 13, scale = 2)
-    private BigDecimal limit;
+    private BigDecimal accountLimit;
 }
