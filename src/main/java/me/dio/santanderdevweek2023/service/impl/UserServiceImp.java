@@ -4,10 +4,12 @@ import me.dio.santanderdevweek2023.entities.model.User;
 import me.dio.santanderdevweek2023.repository.UserRepository;
 import me.dio.santanderdevweek2023.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
 import java.util.UUID;
 
+@Service
 public class UserServiceImp implements UserService {
 
     @Autowired
